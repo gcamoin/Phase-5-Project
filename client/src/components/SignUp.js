@@ -1,5 +1,6 @@
-import {React, useState} from "react"
+import {React, useState, useContext} from "react"
 import {TextField,Button,Typography,Box} from '@mui/material';
+import {UserContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/UserContext.js"
 
 
 function SignUp() {
@@ -7,6 +8,32 @@ function SignUp() {
     const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
     const [email, setEmail] = useState("")
+    const {setUser} = useContext(UserContext)
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+             username: username,
+              password,
+              password_confirmation: passwordConfirmation,
+              email 
+            
+            }),
+        }).then((r) => { 
+          if(r.ok) {
+            r.json().then((user) => setUser(user));
+          } else {
+            r.json().then((err)=>setErrors(err.errors))
+          }
+
+        })
+        
+    }
 
     return (
       
@@ -83,7 +110,7 @@ function SignUp() {
                     align='center'
                     variant='contained'
                     color='primary'
-                    onClick={() => { alert('You have Successfully Loged in!') }}>SignUp
+                    onClick={handleSubmit}>SignUp
                 </Button>
             
 
