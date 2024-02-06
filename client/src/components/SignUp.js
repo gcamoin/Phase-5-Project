@@ -9,6 +9,7 @@ function SignUp() {
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
     const [email, setEmail] = useState("")
     const {setUser} = useContext(UserContext)
+    const [errors, setErrors] = useState([])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -112,6 +113,7 @@ function SignUp() {
                     color='primary'
                     onClick={handleSubmit}>SignUp
                 </Button>
+                <h3 style={{color:"red"}}>{errors}</h3>
             
 
         </Box>

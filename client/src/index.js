@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from '/home/gcamoin/phase-5-project/client/src/components/App.js';
 import reportWebVitals from './reportWebVitals';
+import { UserProvider } from "/home/gcamoin/phase-5-project/client/src/components/contexts/UserContext.js"
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UserProvider>
+      <App />
+    </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
