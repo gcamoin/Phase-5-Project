@@ -69,7 +69,7 @@ function SignUp() {
                     onChange={(event) => setPasswordConfirmation(event.target.value)}
                     name='password'
                     id='password'
-                    label='Password'
+                    label='Confirm Password'
                     type='password'
                     variant='outlined'
                     margin='normal'
