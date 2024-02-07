@@ -1,7 +1,7 @@
 import {React, useState, useContext} from "react"
 import {TextField,Button,Typography,Box} from '@mui/material';
 import {UserContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/UserContext.js"
-
+import Alert from '@mui/material/Alert';
 
 function SignUp() {
     const [username, setUsername] = useState("")
@@ -10,6 +10,9 @@ function SignUp() {
     const [email, setEmail] = useState("")
     const {setUser} = useContext(UserContext)
     const [errors, setErrors] = useState([])
+    const [alert, setAlert] = useState(false)
+    
+    
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -28,8 +31,13 @@ function SignUp() {
         }).then((r) => { 
           if(r.ok) {
             r.json().then((user) => setUser(user));
+            
           } else {
             r.json().then((err)=>setErrors(err.errors))
+            
+           
+            setAlert(true)
+           
           }
 
         })
@@ -113,8 +121,8 @@ function SignUp() {
                     color='primary'
                     onClick={handleSubmit}>SignUp
                 </Button>
-                <h3 style={{color:"red"}}>{errors}</h3>
-            
+               {alert && <Alert severity="error" >{errors.map((error) => <p style={{color: "red"}}>{error}</p>)}</Alert>}
+               
 
         </Box>
             

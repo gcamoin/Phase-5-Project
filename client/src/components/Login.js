@@ -1,12 +1,35 @@
-import {React, useState} from "react"
+import {React, useState, useContext} from "react"
 import {TextField,Button,Typography,Box} from '@mui/material';
-
+import {UserContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/UserContext.js"
+import Alert from '@mui/material/Alert';
 
 function Login({ }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("")
+    const [errors, setErrors] = useState([])
+    const {setUser} = useContext(UserContext)
+    const [alert, setAlert] = useState(false)
    
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        })
+          .then((r) => { 
+            if(r.ok) {
+              r.json().then((user) => setUser(user));
+            } else {
+              r.json().then((err)=>setErrors(err.errors))
+              setAlert(true)
+            }
   
+          })
+          
+      }
   
     return (
       
@@ -49,8 +72,9 @@ function Login({ }) {
                     align='center'
                     variant='contained'
                     color='primary'
-                    onClick={() => { alert('You have Successfully Loged in!') }}>LogIn
+                    onClick={handleSubmit}>LogIn
                 </Button>
+                {alert && <Alert severity="error" >{errors}</Alert>}
             
 
         </Box>
