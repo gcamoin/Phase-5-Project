@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from "react"
+import GenreCard from "/home/gcamoin/phase-5-project/client/src/components/GenreCard.js"
+
 
 function GenreContainer(){
     const [genres, setGenres] = useState([])
@@ -12,10 +14,24 @@ function GenreContainer(){
       }, []);
 
 
+    const genreList = genres?.map((genre) => (
+        <GenreCard 
+            key={genre.id}
+            genre={genre}
+        
+        />
+    ))
+
+
 
       return (
-        
+        <div className="genre-container">
+            {genreList}
+        </div>
+
       )
     
 
 }
+
+export default GenreContainer;
