@@ -18,7 +18,7 @@ function GenreCard({genre}) {
         <div className="genre-cards">
           
             
-            <Typography sx={{ mt: 8, ml: 7, fontFamily: "cursive", textDecoration: "underline" }}  color='primary' variant="h4">{name}</Typography>
+            <Typography sx={{ mt: 8, fontFamily: "fantasy", textDecoration: "underline" }}  color='primary' variant="h4" align="center">{name}</Typography>
              {bookList}   
              
      
