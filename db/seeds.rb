@@ -13,12 +13,12 @@ user10 = User.create(username: Faker::Internet.username(specifier: 5..10), passw
 user11 = User.create(username: Faker::Internet.username(specifier: 5..10), password: Faker::Internet.password(min_length: 5, max_length: 15))
 user12 = User.create(username: Faker::Internet.username(specifier: 5..10), password: Faker::Internet.password(min_length: 5, max_length: 15))
 
-g1 = Genre.create(name: "Adventure/Thriller")
-g2 = Genre.create(name: "Science-Fiction")
-g3 = Genre.create(name: "Mystery")
-g4 = Genre.create(name: "Historical Non-Fiction")
-g5 = Genre.create(name: "Biography")
-g6 = Genre.create(name: "Romance")
+g1 = Genre.create(name: "Adventure/Thriller", image:"https://qph.cf2.quoracdn.net/main-qimg-50d3c8034e0776fe81cfa4433a0ff5af-lq")
+g2 = Genre.create(name: "Science-Fiction", image:"https://cdn.britannica.com/09/92009-050-122EC720/Enterprise-from-Star-Trek-III-The-Search.jpg")
+g3 = Genre.create(name: "Mystery", image:"https://2.bp.blogspot.com/-ieLdCVVLhX0/WvL3q3rUYZI/AAAAAAAABUw/CjqH47DvPOw-OC3vbOm8kZ3C7nPjrIRTQCLcBGAs/s1600/mystery.jpg")
+g4 = Genre.create(name: "Historical Non-Fiction", image:"https://celadonbooks.com/wp-content/uploads/2020/03/Historical-Fiction-scaled.jpg")
+g5 = Genre.create(name: "Biography", image:"https://images.immediate.co.uk/production/volatile/sites/7/2017/08/150-Historic-People-620x413-9327db9.jpg?quality=90&resize=620,414" )
+g6 = Genre.create(name: "Romance", image:"https://www.premiumbeat.com/blog/wp-content/uploads/2020/04/titanic-cover.jpg")
 
 # Adventure/Thriller
 b1 = Book.create(title: "The Fury", pages: Faker::Number.within(range: 250..550), author: "Alex Michaelides", image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1684763144l/123206645.jpg", genre_id: g1.id)

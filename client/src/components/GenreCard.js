@@ -7,8 +7,9 @@ import BookCard from "/home/gcamoin/phase-5-project/client/src/components/BookCa
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 
+
 function GenreCard({genre}) {
-    const {genre_id, name, books} = genre
+    const {genre_id, name, image, books} = genre
 
     // const bookList = books?.map((book) => (
     //     <BookCard 
@@ -21,11 +22,12 @@ function GenreCard({genre}) {
    
     return (
         <div className="genre-cards">
-          
-          <Card sx={{ maxWidth: 345 }}>
+       
+            
+          <Card sx={{ maxWidth: 375, mb: 10, ml: 5 }}>
             <CardMedia
-                sx={{ height: 140 }}
-                image="/static/images/cards/contemplative-reptile.jpg"
+                sx={{ height: 200 }}
+                image={image}
                 title={name}
             />
             <CardContent>
@@ -42,10 +44,10 @@ function GenreCard({genre}) {
             
             </CardActions>
             </Card>
-            {/* <Typography sx={{ mt: 8, fontFamily: "fantasy", textDecoration: "underline" }}  color='primary' variant="h4" align="center">{name}</Typography>
-             {bookList}    */}
-             
-             {/* {bookList} */}
+           
+            
+            
+           
           
         </div>
     )
