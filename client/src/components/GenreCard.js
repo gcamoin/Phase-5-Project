@@ -6,11 +6,13 @@ import Typography from '@mui/material/Typography';
 import BookCard from "/home/gcamoin/phase-5-project/client/src/components/BookCard.js"
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
+import BookContainer from "/home/gcamoin/phase-5-project/client/src/components/BookContainer.js"
 
 
 function GenreCard({genre}) {
-    const {genre_id, name, image, books} = genre
-
+    const {id, name, image, books} = genre
+    
+    
     // const bookList = books?.map((book) => (
     //     <BookCard 
     //         key={book.id}
@@ -18,6 +20,16 @@ function GenreCard({genre}) {
         
     //     />
     // ))
+
+   
+    function handleBrowseBooks(){
+        fetch(`/genres/${id}`)
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    }
+
+
+   
 
    
     return (
@@ -40,11 +52,12 @@ function GenreCard({genre}) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Browse Books</Button>
+                <Button size="small" onClick={handleBrowseBooks}>Browse Books</Button>
             
             </CardActions>
             </Card>
-           
+            
+            
             
             
            

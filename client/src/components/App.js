@@ -13,6 +13,7 @@ function App() {
     <div className="logged-in page">
      
       <GenreContainer />
+
       
     </div>
     )
