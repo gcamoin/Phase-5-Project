@@ -7,6 +7,7 @@ import BookCard from "/home/gcamoin/phase-5-project/client/src/components/BookCa
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import BookContainer from "/home/gcamoin/phase-5-project/client/src/components/BookContainer.js"
+import { Routes, Route, Link } from "react-router-dom";
 
 
 function GenreCard({genre}) {
@@ -38,7 +39,7 @@ function GenreCard({genre}) {
             
           <Card sx={{ maxWidth: 375, mb: 10, ml: 5 }}>
             <CardMedia
-                sx={{ height: 200 }}
+                sx={{ height: 250, width:400 }}
                 image={image}
                 title={name}
             />
@@ -46,17 +47,18 @@ function GenreCard({genre}) {
                 <Typography gutterBottom variant="h5" component="div">
                 {name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over 6,000
-                species, ranging across all continents except Antarctica
-                </Typography>
+                
             </CardContent>
             <CardActions>
-                <Button size="small" onClick={handleBrowseBooks}>Browse Books</Button>
             
+            <Link to={`/genre/${name}`}><Button size="small" onClick={handleBrowseBooks}>Browse Books</Button></Link>
+           
             </CardActions>
             </Card>
             
+            <Routes>
+            <Route path={`/genre/${name}`} element={<BookContainer genre={genre}/>} />
+            </Routes>
             
             
             

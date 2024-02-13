@@ -1,18 +1,10 @@
 import {React, useState} from "react"
+import {TextField,Button,Typography} from '@mui/material';
 
 function AddGenreForm({handleAddGenre}) {
     const [name, setName] = useState("")
     const [image, setImage] = useState("")
     const [errors, setErrors] = useState([])
-    
-
-    function onChangeName(e) {
-        setName(e.target.value)
-    }
-
-    function onChangeImage(e) {
-        setImage(e.target.value)
-    }
 
     
 
@@ -47,27 +39,50 @@ function AddGenreForm({handleAddGenre}) {
 
 
     return (
-        <div className="add-genre-form">
-            <h2>Add Genre</h2>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text"
-                    placeholder="name of genre"
+           
+        <div style={{marginBottom:70, marginLeft:350}} align="left">
+            <Typography sx={{ mt: 3, ml:18, textDecoration:'underline'}}  color='primary' variant="h5">Add New Genre!</Typography>
+                <TextField
+                    onChange={(event) => setName(event.target.value)}
                     value={name}
-                    onChange={onChangeName}
-                />
-                
-                <input 
-                    type="text"
-                    placeholder="genre image url"
+                    id='name'
+                    label='name'
+                    type='name'
+                    variant='outlined'
+                    margin='normal'
+                    required
+                    align='left'>
+                   
+                </TextField>
+
+                <TextField
+                    onChange={(event) => setImage(event.target.value)}
                     value={image}
-                    onChange={onChangeImage}
-                />
-                <button>Add Genre!</button>
+                    id='image'
+                    label='image'
+                    type='name'
+                    variant='outlined'
+                    margin='normal'
+                    required
+                    align='left'>
+                    
+                </TextField>
+                <br></br>
+
+                <Button
+                    type='submit'
+                    align='left'
+                    variant='contained'
+                    color='primary'
+                    onClick={handleSubmit}>Add Genre
+                </Button>
+           
+              
+
                
                 {errors.map((error) => <p style={{color: "red"}}>{error}</p>)}
-            </form>
-        </div>
+         </div>
+      
     )
 
 

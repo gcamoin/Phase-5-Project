@@ -4,6 +4,7 @@ import Header from "/home/gcamoin/phase-5-project/client/src/components/Header.j
 import Grid from '@mui/material/Grid';
 import AddGenreForm from "/home/gcamoin/phase-5-project/client/src/components/AddGenreForm.js"
 
+
 function GenreContainer(){
     const [genres, setGenres] = useState([])
 
@@ -41,6 +42,7 @@ function GenreContainer(){
             <Grid container xs={8}>
             {genreList}
             </Grid>
+            
         </div>
 
       )

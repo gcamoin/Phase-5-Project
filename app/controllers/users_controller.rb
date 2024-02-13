@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
     skip_before_action :authorize, only: :create
-    
+
     def create 
         user = User.create(user_params)
         if user.valid?
+        SignUpMailer.signup_created.deliver_now
         session[:user_id] = user.id
         render json: user, status: :created
         else
