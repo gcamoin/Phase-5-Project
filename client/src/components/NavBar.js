@@ -10,6 +10,9 @@ import Button from '@mui/material/Button';
                
                 <Logout/>
                 <Link to="/"><Button>Home</Button></Link>
+                <br></br>
+                <Link to="/addgenre"><Button>Add Genre</Button></Link>
+                
                 
                 
             

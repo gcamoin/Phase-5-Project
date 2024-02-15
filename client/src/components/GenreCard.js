@@ -6,28 +6,20 @@ import Typography from '@mui/material/Typography';
 import BookCard from "/home/gcamoin/phase-5-project/client/src/components/BookCard.js"
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
-import BookContainer from "/home/gcamoin/phase-5-project/client/src/components/BookContainer.js"
-import { Routes, Route, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 
 function GenreCard({genre}) {
-    const {id, name, image, books} = genre
+    const { id, name, image, books} = genre
     
-    
-    // const bookList = books?.map((book) => (
-    //     <BookCard 
-    //         key={book.id}
-    //         book={book}
-        
-    //     />
-    // ))
+   
 
    
-    function handleBrowseBooks(){
-        fetch(`/genres/${id}`)
-        .then((response) => response.json())
-        .then((json) => console.log(json));
-    }
+    // function handleBrowseBooks(){
+    //     fetch(`/genres/${id}`)
+    //     .then((response) => response.json())
+    //     .then((json) => console.log(json));
+    // }
 
 
    
@@ -51,14 +43,14 @@ function GenreCard({genre}) {
             </CardContent>
             <CardActions>
             
-            <Link to={`/genre/${name}`}><Button size="small" onClick={handleBrowseBooks}>Browse Books</Button></Link>
+            <Link to={`/genres/${id}`}><Button size="small">Browse Books</Button></Link>
            
             </CardActions>
             </Card>
             
-            <Routes>
+            {/* <Routes>
             <Route path={`/genre/${name}`} element={<BookContainer genre={genre}/>} />
-            </Routes>
+            </Routes> */}
             
             
             

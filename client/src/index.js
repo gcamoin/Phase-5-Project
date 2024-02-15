@@ -5,16 +5,16 @@ import App from '/home/gcamoin/phase-5-project/client/src/components/App.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "/home/gcamoin/phase-5-project/client/src/components/contexts/UserContext.js"
-// import {GenreProvider} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
+import {GenreProvider} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        {/* <GenreProvider> */}
+        <GenreProvider>
         <App />
-        {/* </GenreProvider> */}
+        </GenreProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,

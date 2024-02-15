@@ -1,23 +1,22 @@
-// // src/context/user.js
-// import {useState, useEffect, createContext} from "react";
+// src/context/user.js
+import {useState, useEffect, createContext} from "react";
 
-// // create the context
-// const GenreContext = createContext();
+// create the context
+const GenreContext = createContext();
 
-// // create a provider component
-// function GenreProvider({ children }) {
-//     const [genre, setGenre] = useState([]);
-//     const {id} = genre
-//     useEffect(() => {
-//         fetch(`/genre/${id}`).then((response) => {
-//           if (response.ok) {
-//             response.json().then((genre) => setGenre(genre));
-//           }
-//         });
-//       }, []);
-//   // the value prop of the provider will be our context data
-//   // this value will be available to child components of this provider
-//   return <GenreContext.Provider value={{genre, setGenre}}>{children}</GenreContext.Provider>;
-// }
+// create a provider component
+function GenreProvider({ children }) {
+    const [genres, setGenres] = useState([]);
+    useEffect(() => {
+        fetch("/genres").then((response) => {
+          if (response.ok) {
+            response.json().then((genre) => setGenres(genre));
+          }
+        });
+      }, []);
+  // the value prop of the provider will be our context data
+  // this value will be available to child components of this provider
+  return <GenreContext.Provider value={{genres, setGenres}}>{children}</GenreContext.Provider>;
+}
 
-// export { GenreContext, GenreProvider };
+export { GenreContext, GenreProvider };

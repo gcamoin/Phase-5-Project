@@ -9,10 +9,11 @@ function BookCard({book}) {
 
     const {id, title, author, image, pages, reviews } = book
 
+    
 
     return (
         <div className="book-card" align="center">
-            <Card sx={{ maxWidth: 345, mt: 7, mb:7 }} align="center">
+            <Card sx={{ maxWidth: 345, mt: 15, mb:7, ml:10 }} align="center">
             <Typography sx={{mb:2}} variant="h4" color="maroon" align="center" fontFamily={"cursive"} >{title}</Typography>
                 <CardMedia
                     component="img"

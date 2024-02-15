@@ -2,12 +2,11 @@ import React, {useState, useEffect} from "react"
 import GenreCard from "/home/gcamoin/phase-5-project/client/src/components/GenreCard.js"
 import Header from "/home/gcamoin/phase-5-project/client/src/components/Header.js"
 import Grid from '@mui/material/Grid';
-import AddGenreForm from "/home/gcamoin/phase-5-project/client/src/components/AddGenreForm.js"
-
+import Search from "/home/gcamoin/phase-5-project/client/src/components/Search.js"
 
 function GenreContainer(){
     const [genres, setGenres] = useState([])
-
+  
     useEffect(() => {
         fetch("/genres")
         .then((r) => r.json())
@@ -28,16 +27,13 @@ function GenreContainer(){
         
     ))
 
-    function handleAddGenre(newGenre) {
-        setGenres([...genres, newGenre])
-    }
-
 
 
       return (
         <div className="genre-container" align="center">
             <Header/>
-            <AddGenreForm handleAddGenre={handleAddGenre}/>
+            <Search />
+           
             <br></br>
             <Grid container xs={8}>
             {genreList}

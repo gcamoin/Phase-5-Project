@@ -1,33 +1,39 @@
 import React, {useState, useEffect, useContext} from "react"
 import BookCard from "/home/gcamoin/phase-5-project/client/src/components/BookCard.js"
-// import {GenreContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
+import {GenreContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
+import { useParams } from "react-router-dom";
+import Grid from '@mui/material/Grid';
 
-function BookContainer({genre, genreID}){
+function BookContainer(){
     const [books, setBooks] = useState([])
-    // const {genre} = useContext(GenreContext)
-
+    const {id} = useParams()
+    
     useEffect(() => {
-        fetch(`/genres/${genreID}`)
+        fetch(`/genres/${id}`)
         .then((r) => r.json())
-        .then(setBooks)
+        .then((data)=> {
+          setBooks(data.books)
+        })
       }, []);
 
-      console.log(books)
+      
 
-      const bookList = genre.books?.map((book) => (
+      const bookList = books?.map((book) => (
         <BookCard
             key={book.id}
             book={book}
         />
       ))
 
+      console.log(bookList)
       return(
         <div>
-           {bookList} 
+           <Grid container xs={8} >
+            {bookList}
+          </Grid>
         </div>
 
       )
-    
 
 }
 
