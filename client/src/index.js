@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "/home/gcamoin/phase-5-project/client/src/components/contexts/UserContext.js"
 import {GenreProvider} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
+import {BookProvider} from "/home/gcamoin/phase-5-project/client/src/components/contexts/BookContext.js"
 
 
 ReactDOM.render(
@@ -13,7 +14,9 @@ ReactDOM.render(
     <BrowserRouter>
       <UserProvider>
         <GenreProvider>
-        <App />
+          <BookProvider>
+            <App />
+          </BookProvider>
         </GenreProvider>
       </UserProvider>
     </BrowserRouter>

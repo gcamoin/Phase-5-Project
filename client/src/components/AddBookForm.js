@@ -6,7 +6,7 @@ function AddBookForm({genreID, handleAddBook}) {
     const [author, setAuthor] = useState("")
     const [pageCount, setPageCount] = useState("")
     const [image, setImage] = useState("")
-    // const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState([])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -24,22 +24,22 @@ function AddBookForm({genreID, handleAddBook}) {
                 
             }),
         })
-        // .then((r) => { 
-        //     if(r.ok) {
-        //       r.json().then((bookToAdd) => handleAddBook(bookToAdd));
-        //     } else {
-        //       r.json().then((err)=>setErrors(err.errors))
-        //       console.log(err.errors)
-        //     }
+        .then((r) => { 
+            if(r.ok) {
+              r.json().then((bookToAdd) => handleAddBook(bookToAdd));
+            } else {
+              r.json().then((err)=>setErrors(err.errors))
+             
+            }
   
-        //   })
+          })
 
-        //   setTitle("")
-        //   setAuthor("")
-        //   setImage("")
-        //   setPageCount("")
-        .then((r) => r.json())
-        .then((bookToAdd) => handleAddBook(bookToAdd))
+          setTitle("")
+          setAuthor("")
+          setImage("")
+          setPageCount("")
+        // .then((r) => r.json())
+        // .then((bookToAdd) => handleAddBook(bookToAdd))
         
     }
 
@@ -123,9 +123,9 @@ function AddBookForm({genreID, handleAddBook}) {
                 </Button>
 
            
-                {/* <div>
+                <div>
                 {errors.map((error) => <p style={{color: "red"}}>{error}</p>)}
-                </div> */}
+                </div>
                
                 
          </div>

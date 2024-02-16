@@ -27,12 +27,12 @@ function GenreContainer(){
         
     ))
 
-
+      
 
       return (
         <div className="genre-container" align="center">
             <Header/>
-            <Search />
+            <Search  />
            
             <br></br>
             <Grid container xs={8}>
