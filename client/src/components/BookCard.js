@@ -19,7 +19,7 @@ function BookCard({book}) {
 
     return (
         <div className="book-card" align="center">
-            <Card sx={{ maxWidth: 350, mt: 20, mb:7, ml:10 }} align="center">
+            <Card sx={{ maxWidth: 350, mt: 5, mb:7, ml:10 }} align="center">
                 <CardMedia
                     component="img"
                     alt="book image"
