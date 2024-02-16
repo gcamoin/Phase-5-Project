@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show, :create]
   resources :genres, only: [:index, :show, :create]
 
-  
+  get '/books/:id', to: 'books#show'
+  get "/me", to: "users#show"
   get '/genres/:id', to: 'genres#show'
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"

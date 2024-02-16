@@ -12,6 +12,7 @@ function BookContainer(){
         fetch(`/genres/${id}`)
         .then((r) => r.json())
         .then((data)=> {
+          console.log(data)
           setBooks(data.books)
         })
       }, []);
@@ -25,9 +26,9 @@ function BookContainer(){
         />
       ))
 
-      console.log(bookList)
+  
       return(
-        <div>
+        <div align="center">
            <Grid container xs={8} >
             {bookList}
           </Grid>

@@ -1,20 +1,25 @@
-import {React, useState} from "react"
+import {React, useState, useEffect} from "react"
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-
+import Button from '@mui/material/Button';
+import Review from '/home/gcamoin/phase-5-project/client/src/components/Review.js'
+import { Link } from "react-router-dom";
 
 function BookCard({book}) {
+    
+    const {id, author, image, pages} = book
+    
 
-    const {id, title, author, image, pages, reviews } = book
 
+    
     
 
     return (
         <div className="book-card" align="center">
-            <Card sx={{ maxWidth: 345, mt: 15, mb:7, ml:10 }} align="center">
-            <Typography sx={{mb:2}} variant="h4" color="maroon" align="center" fontFamily={"cursive"} >{title}</Typography>
+            <Card sx={{ maxWidth: 350, mt: 20, mb:7, ml:10 }} align="center">
                 <CardMedia
                     component="img"
                     alt="book image"
@@ -28,9 +33,15 @@ function BookCard({book}) {
                          {pages} Pages 📘
                     </Typography>
                 </CardContent>
+                <CardActions>
+            
+                <Link to={`/books/${id}`}><Button size="small">See Reviews</Button></Link>
+           
+            </CardActions>
 
             </Card>
             
+            {/* {bookReviews} */}
         </div>
     )
 
