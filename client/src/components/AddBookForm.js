@@ -38,8 +38,7 @@ function AddBookForm({genreID, handleAddBook}) {
           setAuthor("")
           setImage("")
           setPageCount("")
-        // .then((r) => r.json())
-        // .then((bookToAdd) => handleAddBook(bookToAdd))
+        
         
     }
 

@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useContext} from "react"
 import BookCard from "/home/gcamoin/phase-5-project/client/src/components/BookCard.js"
-import {GenreContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
 import { useParams } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import AddBookForm from "/home/gcamoin/phase-5-project/client/src/components/AddBookForm.js"

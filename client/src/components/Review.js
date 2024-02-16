@@ -6,7 +6,7 @@ function Review({review}) {
     
     return(
         <div className="reviews">
-           <ol><p style={{fontSize:30}}>{content}</p></ol>
+           <ol><p style={{fontSize:30}}>{content}</p></ol> -<span>{review.user.username}</span>
         </div>
     )
     

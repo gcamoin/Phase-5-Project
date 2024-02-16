@@ -8,7 +8,7 @@ import { Router, Routes, Route } from "react-router-dom";
 import AddGenreForm from "/home/gcamoin/phase-5-project/client/src/components/AddGenreForm.js"
 import NavBar from "/home/gcamoin/phase-5-project/client/src/components/NavBar.js"
 import ReviewContainer from "/home/gcamoin/phase-5-project/client/src/components/ReviewContainer.js"
-
+import SearchBar from "/home/gcamoin/phase-5-project/client/src/components/SearchBar.js"
 function App() {
   const {user, setUser} = useContext(UserContext)
  
@@ -22,8 +22,8 @@ function App() {
           <Route path="/genres/:id" element={<BookContainer/>} />
           <Route path="/books/:id" element={<ReviewContainer/>}/>
           <Route path="/"  element={<GenreContainer/>}/>
-            
           <Route path="addgenre" element={<AddGenreForm/>}/>
+          <Route path="findbooks" element={<SearchBar/>} />
         </Routes>
       
 

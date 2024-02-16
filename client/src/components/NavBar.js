@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
                 <Link to="/"><Button>Home</Button></Link>
                 <br></br>
                 <Link to="/addgenre"><Button>Add Genre</Button></Link>
+                <br></br>
+                <Link to="/findbooks"><Button>Search Books</Button></Link>
                 
                 
                 
