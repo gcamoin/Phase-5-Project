@@ -32,7 +32,7 @@ function BookContainer(){
   
       return(
         <div align="center">
-          <AddBookForm />
+          <AddBookForm handleAddBook={handleAddBook} genreID={id} />
            <Grid container xs={8} >
             {bookList}
           </Grid>

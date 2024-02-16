@@ -1,11 +1,48 @@
 import React,{useState} from "react"
 import {TextField,Button,Typography} from '@mui/material';
 
-function AddBookForm() {
+function AddBookForm({genreID, handleAddBook}) {
     const [title, setTitle] = useState("")
     const [author, setAuthor] = useState("")
     const [pageCount, setPageCount] = useState("")
     const [image, setImage] = useState("")
+    // const [errors, setErrors] = useState([])
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("/books", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title: title,
+                author: author,
+                image: image,
+                pages: pageCount,
+                genre_id: genreID
+                
+            }),
+        })
+        // .then((r) => { 
+        //     if(r.ok) {
+        //       r.json().then((bookToAdd) => handleAddBook(bookToAdd));
+        //     } else {
+        //       r.json().then((err)=>setErrors(err.errors))
+        //       console.log(err.errors)
+        //     }
+  
+        //   })
+
+        //   setTitle("")
+        //   setAuthor("")
+        //   setImage("")
+        //   setPageCount("")
+        .then((r) => r.json())
+        .then((bookToAdd) => handleAddBook(bookToAdd))
+        
+    }
+
 
     return (
            
@@ -82,13 +119,13 @@ function AddBookForm() {
                     align='left'
                     variant='contained'
                     color='primary'
-                    >Add Book
+                    onClick={handleSubmit}>Add Book
                 </Button>
 
            
-                
-              
-            
+                {/* <div>
+                {errors.map((error) => <p style={{color: "red"}}>{error}</p>)}
+                </div> */}
                
                 
          </div>
