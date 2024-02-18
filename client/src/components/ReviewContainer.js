@@ -23,6 +23,8 @@ function ReviewContainer() {
             key={review.id}
             review={review}
             handleDeleteReview={handleDeleteReview}
+            handleUpdateReview={handleUpdateReview}
+            bookID={id}
         />
       ))
 
@@ -35,6 +37,17 @@ function ReviewContainer() {
     function handleDeleteReview(reviewToDeleteID) {
       const updatedReviews = reviews.filter((review) => reviewToDeleteID.id !== review.id)
       setReviews(updatedReviews)
+    }
+
+    function handleUpdateReview(reviewToUpdate) {
+        const updatedReview = reviews.map((review) => {
+          if(review.id === reviewToUpdate.id) {
+            return reviewToUpdate
+          } else {
+            return review
+          }
+        })
+        setReviews(updatedReview)
     }
 
       return(
