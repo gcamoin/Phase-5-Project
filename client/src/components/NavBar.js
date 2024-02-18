@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
                 <br></br>
                 <Link to="/addgenre"><Button>Add Genre</Button></Link>
                 <br></br>
-                <Link to="/findbooks"><Button>Search Books</Button></Link>
+                <Link to="/findbooks"><Button>🔍 Books</Button></Link>
                 
                 
                 

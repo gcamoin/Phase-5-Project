@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import {BookContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/BookContext.js"
 import FilteredBooksCard from "/home/gcamoin/phase-5-project/client/src/components/FilteredBooksCard.js"
 
+
 function SearchBar({}){
     const [input, setInput] = useState("")
     const [searchedBooks, setSearchedBooks] = useState([])
@@ -63,7 +64,9 @@ function SearchBar({}){
                 </Button>
 
                 <div>
-                    {filteredBooks}
+                    <Grid container xs={8}>
+                        {filteredBooks}
+                    </Grid>
                 </div>
             
            

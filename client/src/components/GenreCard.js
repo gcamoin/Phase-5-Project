@@ -3,7 +3,6 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography';
-import BookCard from "/home/gcamoin/phase-5-project/client/src/components/BookCard.js"
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";

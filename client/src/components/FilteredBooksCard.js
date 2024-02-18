@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
+import {Link} from "react-router-dom"
 
 
 function FilteredBooksCard({searchedBook}) {
@@ -28,7 +29,7 @@ function FilteredBooksCard({searchedBook}) {
                 </CardContent>
                 <CardActions>
             
-                {/* <Link to={`/books/${id}`}><Button size="small">See Reviews</Button></Link> */}
+                <Link to={`/books/${id}`}><Button size="small">See Reviews</Button></Link>
            
             </CardActions>
 
