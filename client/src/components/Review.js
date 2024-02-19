@@ -1,12 +1,13 @@
 import {React, useState} from "react"
-import { Divider, Grid, Paper, Button, TextField } from "@mui/material/";
+import { Divider, Grid, Paper, Button, Avatar } from "@mui/material/";
 
 
-function Review({review, handleDeleteReview, bookID, handleUpdateReview}) {
+function Review({review, handleDeleteReview, bookID, handleUpdateReview, user}) {
     const {id, content} = review
     const [errors, setErrors] = useState([])
     const [editReview, setEditReview] = useState(false)
     const [editContent, setEditContent] = useState(content)
+    
 
     function handleSubmit(e) {
       e.preventDefault()
@@ -58,7 +59,7 @@ function Review({review, handleDeleteReview, bookID, handleUpdateReview}) {
                 <Grid container wrap="nowrap" spacing={2}>
                 
                   <Grid item>
-                    {/* <Avatar alt="Remy Sharp" src={imgLink} /> */}
+                    <Avatar alt="Remy Sharp" src={review.user.avatar} />
                   </Grid>
                   <Grid justifyContent="left" item xs zeroMinWidth>
                     <h4 style={{ margin: 0, textAlign: "left" }}>{review.user.username}</h4>

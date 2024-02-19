@@ -58,6 +58,7 @@ function AddBookForm({genreID, handleAddBook}) {
                     required
                     size="normal"
                     align='center'
+                    helperText={errors[0]}
                     sx={{width:300}}
                     >
                    
@@ -74,6 +75,7 @@ function AddBookForm({genreID, handleAddBook}) {
                     required
                     size="normal"
                     align='left'
+                    helperText={errors[1]}
                     sx={{width:300}}
                     >
 
@@ -90,6 +92,7 @@ function AddBookForm({genreID, handleAddBook}) {
                     required
                     size="normal"
                     align='left'
+                    helperText={errors[2]}
                     sx={{width:300}}
                     >
 
@@ -106,6 +109,7 @@ function AddBookForm({genreID, handleAddBook}) {
                     required
                     size="normal"
                     align='left'
+                    helperText={errors[3]}
                     sx={{width:300}}
                     >
                     
@@ -122,9 +126,7 @@ function AddBookForm({genreID, handleAddBook}) {
                 </Button>
 
            
-                <div>
-                {errors.map((error) => <p style={{color: "red"}}>{error}</p>)}
-                </div>
+               
                
                 
          </div>

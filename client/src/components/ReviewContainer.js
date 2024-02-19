@@ -3,6 +3,7 @@ import React, {useState, useEffect, useContext} from "react"
 import { useParams } from "react-router-dom";
 import Review from "/home/gcamoin/phase-5-project/client/src/components/Review.js"
 import AddReviewForm from "/home/gcamoin/phase-5-project/client/src/components/AddReviewForm.js"
+import {Typography} from '@mui/material';
 
 function ReviewContainer() {
     const [reviews, setReviews] = useState([])
@@ -26,6 +27,7 @@ function ReviewContainer() {
             handleDeleteReview={handleDeleteReview}
             handleUpdateReview={handleUpdateReview}
             bookID={id}
+            user={user}
         />
       ))
 
@@ -61,7 +63,7 @@ function ReviewContainer() {
 
       return(
         <div align="center">
-            <h1>Reviews</h1>
+            <Typography sx={{fontFamily:"cursive", textDecoration:"underline"}} variant="h3" color="primary">Reviews</Typography>
             {reviewList}
             <AddReviewForm bookID={id} handleAddReview={handleAddReview} />
         </div>

@@ -37,7 +37,8 @@ function AddReviewForm({bookID, handleAddReview}) {
     return(
         
         <div>
-            <h2>Leave A Review</h2>
+          <Typography sx={{fontFamily:"cursive", textDecoration:"underline"}} color="primary" variant="h4">Leave A Review</Typography>
+            
     <Box
       component="form"
       sx={{

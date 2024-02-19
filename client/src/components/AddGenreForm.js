@@ -59,6 +59,7 @@ function AddGenreForm({handleAddGenre}) {
                     required
                     size="normal"
                     align='center'
+                    helperText={errors[0]}
                     sx={{width:300}}
                     >
                    
@@ -75,6 +76,7 @@ function AddGenreForm({handleAddGenre}) {
                     required
                     size="normal"
                     align='left'
+                    helperText={errors[1]}
                     sx={{width:300}}
                     >
                     
@@ -91,7 +93,7 @@ function AddGenreForm({handleAddGenre}) {
                 </Button>
 
            
-                {errors.map((error) => <p style={{color: "red"}}>{error}</p>)}
+                
               
             <div>
             <img src="https://assets-global.website-files.com/634ef78fb6faa83c8375fe5e/63783ef59d37fd25848828fe_10-books-every-leader-should-read.webp" alt="books" style={{width:900}} />
