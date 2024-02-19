@@ -8,6 +8,7 @@ function SignUp() {
     const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
     const [email, setEmail] = useState("")
+    const [profilePicture, setProfilePicture] = useState("")
     const {setUser} = useContext(UserContext)
     const [errors, setErrors] = useState([])
     const [alert, setAlert] = useState(false)
@@ -25,7 +26,8 @@ function SignUp() {
              username: username,
               password,
               password_confirmation: passwordConfirmation,
-              email 
+              email,
+              avatar: profilePicture
             
             }),
         }).then((r) => { 
@@ -112,6 +114,18 @@ function SignUp() {
                     align='center'
                     fullWidth
                     required>
+                </TextField>
+
+                <TextField
+                    onChange={(event) => setProfilePicture(event.target.value)}
+                    value={profilePicture}
+                    id='profilePicture'
+                    label='Profile Picture url (optional)'
+                    variant='outlined'
+                    margin='normal'
+                    required
+                    fullWidth
+                    align='center'>
                 </TextField>
 
                 <Button

@@ -7,7 +7,13 @@ function Review({review, handleDeleteReview, bookID, handleUpdateReview, user}) 
     const [errors, setErrors] = useState([])
     const [editReview, setEditReview] = useState(false)
     const [editContent, setEditContent] = useState(content)
-    
+    // const [isUser, setIsUser] = useState(true)
+    // console.log(review.user.username)
+    // if(user.username === review.user.username) {
+    //   setIsUser(true)
+    // } else {
+    //   setIsUser(false)
+    // }
 
     function handleSubmit(e) {
       e.preventDefault()
@@ -78,9 +84,15 @@ function Review({review, handleDeleteReview, bookID, handleUpdateReview, user}) 
                     </div> 
                       }
                   </Grid>
+                 {user.username === review.user.username && 
+                  <div>
                   <Button onClick={deleteReview}>Delete</Button>
                   <br></br>
                   <Button onClick={() => setEditReview(!editReview)}> Edit Review </Button>
+                  </div>
+                }
+                
+                
                 </Grid>
                 <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
                 
