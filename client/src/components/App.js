@@ -9,8 +9,10 @@ import AddGenreForm from "/home/gcamoin/phase-5-project/client/src/components/Ad
 import NavBar from "/home/gcamoin/phase-5-project/client/src/components/NavBar.js"
 import ReviewContainer from "/home/gcamoin/phase-5-project/client/src/components/ReviewContainer.js"
 import SearchBar from "/home/gcamoin/phase-5-project/client/src/components/SearchBar.js"
+import Profile from "/home/gcamoin/phase-5-project/client/src/components/Profile.js"
+
 function App() {
-  const {user, setUser} = useContext(UserContext)
+  const {user} = useContext(UserContext)
  
 
   if (user) {
@@ -22,6 +24,7 @@ function App() {
           <Route path="/genres/:id" element={<BookContainer/>} />
           <Route path="/books/:id" element={<ReviewContainer/>}/>
           <Route path="/"  element={<GenreContainer/>}/>
+          <Route path="me" element={<Profile user={user}/>}/>
           <Route path="addgenre" element={<AddGenreForm/>}/>
           <Route path="findbooks" element={<SearchBar/>} />
         </Routes>

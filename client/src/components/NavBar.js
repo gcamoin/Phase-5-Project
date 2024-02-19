@@ -11,6 +11,8 @@ import Button from '@mui/material/Button';
                 <Logout/>
                 <Link to="/"><Button>Home</Button></Link>
                 <br></br>
+                <Link to="/me"><Button>My Books</Button></Link>
+                <br></br>
                 <Link to="/addgenre"><Button>Add Genre</Button></Link>
                 <br></br>
                 <Link to="/findbooks"><Button>🔍 Books</Button></Link>
