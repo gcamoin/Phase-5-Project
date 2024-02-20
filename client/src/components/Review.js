@@ -7,14 +7,7 @@ function Review({review, handleDeleteReview, bookID, handleUpdateReview, user}) 
     const [errors, setErrors] = useState([])
     const [editReview, setEditReview] = useState(false)
     const [editContent, setEditContent] = useState(content)
-    // const [isUser, setIsUser] = useState(true)
-    // console.log(review.user.username)
-    // if(user.username === review.user.username) {
-    //   setIsUser(true)
-    // } else {
-    //   setIsUser(false)
-    // }
-
+    console.log(review.user.id)
     function handleSubmit(e) {
       e.preventDefault()
       fetch(`/reviews/${id}`, {
@@ -65,7 +58,7 @@ function Review({review, handleDeleteReview, bookID, handleUpdateReview, user}) 
                 <Grid container wrap="nowrap" spacing={2}>
                 
                   <Grid item>
-                    <Avatar alt="Remy Sharp" src={review.user.avatar} />
+                   <Avatar alt="Remy Sharp" src={review.user.avatar} />
                   </Grid>
                   <Grid justifyContent="left" item xs zeroMinWidth>
                     <h4 style={{ margin: 0, textAlign: "left" }}>{review.user.username}</h4>

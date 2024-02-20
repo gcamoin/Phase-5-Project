@@ -1,7 +1,8 @@
 import {React, useState, useContext} from "react"
-import {TextField,Button,Typography,Box} from '@mui/material';
+import {TextField,Button,Typography,Box, Grid} from '@mui/material';
 import {UserContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/UserContext.js"
 import Alert from '@mui/material/Alert';
+import {Link, useNavigate} from "react-router-dom"
 
 function SignUp() {
     const [username, setUsername] = useState("")
@@ -12,7 +13,7 @@ function SignUp() {
     const {setUser} = useContext(UserContext)
     const [errors, setErrors] = useState([])
     const [alert, setAlert] = useState(false)
-    
+    const navigate = useNavigate()
     
 
     function handleSubmit(e) {
@@ -33,6 +34,7 @@ function SignUp() {
         }).then((r) => { 
           if(r.ok) {
             r.json().then((user) => setUser(user));
+            navigate("/home")
             
           } else {
             r.json().then((err)=>setErrors(err.errors))
@@ -47,6 +49,7 @@ function SignUp() {
     }
 
     return (
+      
       
           
         <Box sx={{display: 'flex',flexDirection: 'column','& .MuiButton-root': { width: '15ch' },'& .MuiTextField-root': { width: '50ch' }}} marginLeft={80} marginTop={10} > 
@@ -127,14 +130,20 @@ function SignUp() {
                     fullWidth
                     align='center'>
                 </TextField>
-
-                <Button
-                    type='submit'
-                    align='center'
-                    variant='contained'
-                    color='primary'
-                    onClick={handleSubmit}>SignUp
-                </Button>
+                <Grid container justify="space-between">
+                <Grid item xs={10} xl={1} lg={6} md={6} sm={12}>
+                    <Button
+                        type='submit'
+                        align='center'
+                        variant='contained'
+                        color='primary'
+                        onClick={handleSubmit}>SignUp
+                    </Button>
+                </Grid>
+                <Grid item xs={10} xl={1} lg={6} md={6} sm={12}>
+                   <Link to="/"><Button>Login</Button></Link>
+                </Grid>
+              </Grid>
                {alert && <Alert severity="error" >{errors.map((error) => <p style={{color: "red"}}>{error}</p>)}</Alert>}
                
 

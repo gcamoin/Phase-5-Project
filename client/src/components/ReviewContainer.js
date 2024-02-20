@@ -14,7 +14,6 @@ function ReviewContainer() {
         fetch(`/books/${id}`)
         .then((r) => r.json())
         .then((data)=> {
-          console.log(data.reviews)
         setReviews(data.reviews)
           
         })

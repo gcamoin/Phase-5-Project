@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
                     <Logout/>
                 </nav>
                 <nav className="nav-left" align="left" style={{marginLeft:5}} >
-                    <Link to="/"><Button>Home</Button></Link>
+                    <Link to="/home"><Button>Home</Button></Link>
                     <br></br>
                     <Link to="/me"><Button>My Books</Button></Link>
                     <br></br>

@@ -1,4 +1,4 @@
-import {React, useState} from "react"
+import {React} from "react"
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent'
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 
 function GenreCard({genre}) {
-    const { id, name, image, books} = genre
+    const { id, name, image } = genre
    
 
    

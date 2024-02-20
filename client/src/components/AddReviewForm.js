@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {TextField,Button,Typography,Box} from '@mui/material';;
+import {TextField,Button,Typography,Box} from '@mui/material';
 
 function AddReviewForm({bookID, handleAddReview}) {
     const [content, setContent] = useState("")
@@ -30,41 +30,43 @@ function AddReviewForm({bookID, handleAddReview}) {
   
           })
           setContent("")
+          setErrors("")
         
     }
 
 
     return(
         
-        <div>
+      <div>
           <Typography sx={{fontFamily:"cursive", textDecoration:"underline"}} color="primary" variant="h4">Leave A Review</Typography>
             
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { mt:5, width: 700 },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-        <div>
-        <TextField
-         value={content}
-         onChange={(event) => setContent(event.target.value)}
-          id="filled-multiline-flexible"
-          label="Leave a review"
-          multiline
-          maxRows={4}
-          variant="filled"
-          
-        />
-        <br></br>
-        <Button onClick={handleSubmit}>Submit Review</Button>
-        </div>
+          <Box
+            component="form"
+            sx={{
+              '& .MuiTextField-root': { mt:5, width: 700 },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+              <div>
+              <TextField
+              value={content}
+              onChange={(event) => setContent(event.target.value)}
+                id="filled-multiline-flexible"
+                label="Leave a review"
+                multiline
+                maxRows={4}
+                variant="filled"
+                helperText={errors}
+                
+              />
+              <br></br>
+              <Button onClick={handleSubmit}>Submit Review</Button>
+              </div>
 
-    </Box>
-    <p style={{color: "red"}}>{errors}</p>
-    </div>
+          </Box>
+          
+        </div>
     )
 
 
