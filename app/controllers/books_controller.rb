@@ -16,12 +16,19 @@ class BooksController < ApplicationController
     end
 
     def create 
-        book = Book.create(title: params[:title], author: params[:author], image: params[:image], pages: params[:pages], genre_id: params[:genre_id]  )
+        book = Book.create(book_params)
         if book.valid?
             render json: book, status: :created
         else
             render json: {errors: book.errors.full_messages}, status: :unprocessable_entity
         end
     end
+
+    private
+
+    def book_params
+       params.permit(:title, :author, :image, :pages, :genre_id) 
+    end
+
 
 end

@@ -19,6 +19,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+#letter_opener gem
+gem "letter_opener", :group => :development
+
 # Seeding Data
 gem "faker"
 

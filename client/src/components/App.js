@@ -24,7 +24,7 @@ function App() {
           <Route path="/genres/:id" element={<BookContainer/>} />
           <Route path="/books/:id" element={<ReviewContainer/>}/>
           <Route path="/home"  element={<GenreContainer/>}/>
-          <Route path="/me" element={<Profile user={user}/>}/>
+          <Route path="/mybooks" element={<Profile user={user}/>}/>
           <Route path="/addgenre" element={<AddGenreForm/>}/>
           <Route path="/findbooks" element={<SearchBar/>} />
         </Routes>

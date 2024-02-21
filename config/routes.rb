@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   
   get '/books/:id', to: 'books#show'
-  get "/me", to: "users#show"
+  get "/mybooks", to: "users#show"
   get '/genres/:id', to: 'genres#show'
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"

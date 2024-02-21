@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
                 <nav className="nav-left" align="left" style={{marginLeft:5}} >
                     <Link to="/home"><Button>Home</Button></Link>
                     <br></br>
-                    <Link to="/me"><Button>My Books</Button></Link>
+                    <Link to="/mybooks"><Button>My Books</Button></Link>
                     <br></br>
                     <Link to="/addgenre"><Button>Add Genre</Button></Link>
                     <br></br>

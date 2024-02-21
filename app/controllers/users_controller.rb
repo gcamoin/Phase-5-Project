@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     def create 
         user = User.create(user_params)
         if user.valid?
-        SignUpMailer.signup_created.deliver_now
+        SignUpMailer.signup_created.deliver
         session[:user_id] = user.id
         render json: user, status: :created
         else
