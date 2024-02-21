@@ -1,7 +1,6 @@
 ## Book Review App - Book Buddy
 
 
-
 ## Description
 Book Buddy is an all in one application for all the book worms out there. Book Buddy allows user to browse through
 various genres of books and leave reviews on books they have read as well as see reviews other users have left.
@@ -36,50 +35,47 @@ Add MUI icons npm install @mui/icons-material
 
 CD into client folder; Run React npm start
 
-### Installing
+## DB Diagram 
+![Phase 5 Model Relationships (1)](https://github.com/gcamoin/Phase-5-Project/assets/117125009/6bf46073-fef5-4939-b762-1e8ef7c5b239)
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+## Features
 
-### Executing program
+## Sign-up Page
+![Screenshot (14)](https://github.com/gcamoin/Phase-5-Project/assets/117125009/02e0f6dc-f755-4e2a-bbee-f6751cebdab8)
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+## Log-in Page 
+![Screenshot (13)](https://github.com/gcamoin/Phase-5-Project/assets/117125009/9361c33c-3844-4a07-8259-5149a14f90b0)
 
-## Help
+## Home Page 
+![Screenshot (15)](https://github.com/gcamoin/Phase-5-Project/assets/117125009/1ece3957-9e12-4138-9fa2-ad7b8d94e80f)
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+## Add Genre Page
+![Screenshot (16)](https://github.com/gcamoin/Phase-5-Project/assets/117125009/0efa2d9e-6800-49e4-81b8-3aedf8d47459)
+
+## Reviews Page
+![Screenshot (18)](https://github.com/gcamoin/Phase-5-Project/assets/117125009/70d0defd-f7bf-40c3-bd52-093aba6e3823)
+
+## Book Genre Page
+![Screenshot (17)](https://github.com/gcamoin/Phase-5-Project/assets/117125009/ebe6f101-642b-4502-9692-62c1462039c7)
+
+## RoadMap/Potential Chnages & Improvements
+- Allow users to like/dislike books
+- Create a more visually appealing user interface
+- Allow users to leave comments on other people reviews
+- Allow users to make a list of books that they would like to read in the future
+
+## Links to Files
+Components File: https://github.com/gcamoin/Phase-5-Project/tree/main/client/src/components
+Index.js: https://github.com/gcamoin/Phase-5-Project/blob/main/client/src/index.js
+App.css: https://github.com/gcamoin/Phase-5-Project/blob/main/client/src/App.css
+Index.html File: https://github.com/gcamoin/Phase-5-Project/blob/main/client/public/index.html
+
 
 ## Authors
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+ Garrett Camoin  
+Support: Email- gcamoin5@gmail.com
 
-## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
