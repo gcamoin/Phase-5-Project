@@ -21,8 +21,8 @@ function App() {
     <div className="logged-in page">
      <NavBar/>
         <Routes>
-          <Route path="/genres/:id" element={<BookContainer/>} />
-          <Route path="/books/:id" element={<ReviewContainer/>}/>
+          <Route path="/genres/:id/books" element={<BookContainer/>} />
+          <Route path="/books/:id/reviews" element={<ReviewContainer/>}/>
           <Route path="/home"  element={<GenreContainer/>}/>
           <Route path="/mybooks" element={<Profile user={user}/>}/>
           <Route path="/addgenre" element={<AddGenreForm/>}/>
@@ -45,5 +45,6 @@ function App() {
   }
   
 }
+
 
 export default App;

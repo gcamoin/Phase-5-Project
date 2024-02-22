@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useContext} from "react"
 import GenreCard from "/home/gcamoin/phase-5-project/client/src/components/GenreCard.js"
 import Header from "/home/gcamoin/phase-5-project/client/src/components/Header.js"
 import Grid from '@mui/material/Grid';
+import {GenreContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
 
 function GenreContainer(){
-    const [genres, setGenres] = useState([])
-    
+  const {genres, setGenres} = useContext(GenreContext) 
+  
 
     useEffect(() => {
         fetch("/genres")
@@ -15,8 +16,7 @@ function GenreContainer(){
     
       }, []);
 
-     
-
+    
     const genreList = genres?.map((genre) => (
         
         <GenreCard 
@@ -41,7 +41,7 @@ function GenreContainer(){
             <Grid container xs={8}>
             {genreList}
             </Grid>
-            
+           
         </div>
 
       )

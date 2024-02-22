@@ -31,11 +31,11 @@ function GenreCard({genre}) {
             </CardContent>
             <CardActions>
             
-            <Link to={`/genres/${id}`}><Button size="small">Browse Books</Button></Link>
+            <Link to={`/genres/${id}/books`}><Button size="small">Browse Books</Button></Link>
            
             </CardActions>
             </Card>
-               
+             
         </div>
     )
 

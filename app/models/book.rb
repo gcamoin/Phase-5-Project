@@ -7,4 +7,7 @@ class Book < ApplicationRecord
     validates :author, presence: true
     validates :image, presence: true
     validates :pages, presence: true
+    validates :title, uniqueness: {
+        scope: [:genre_id]
+    }
 end

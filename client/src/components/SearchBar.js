@@ -1,27 +1,29 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import {TextField,Typography} from '@mui/material';
 import Grid from '@mui/material/Grid';
 import FilteredBooksCard from "/home/gcamoin/phase-5-project/client/src/components/FilteredBooksCard.js"
 import Header from "/home/gcamoin/phase-5-project/client/src/components/Header.js"
-
+import {BookContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/BookContext.js"
 function SearchBar({}){
     const [input, setInput] = useState("")
     const [searchedBooks, setSearchedBooks] = useState([])
+    const {books} = useContext(BookContext)
     
-    
-    const fetchData = (value) => {
-        fetch("/books").then((response) => response.json()).then(json => {
-            const results = json.filter((book) => {
+    const searchData = (value) => {
+        
+            const results = books.filter((book) => {
                 return value && book && book.title && book.title.toLowerCase().includes(value)
             });
             setSearchedBooks(results)
-        })
+        
     }
 
     const handleChange = (value) => {
         setInput(value)
-        fetchData(value)
+        searchData(value)
     }
+
+
 
     
     const filteredBooks = searchedBooks?.map((searchedBook) => (

@@ -4,22 +4,23 @@ import { useParams } from "react-router-dom";
 import Review from "/home/gcamoin/phase-5-project/client/src/components/Review.js"
 import AddReviewForm from "/home/gcamoin/phase-5-project/client/src/components/AddReviewForm.js"
 import {Typography} from '@mui/material';
+import {BookContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/BookContext.js"
 
 function ReviewContainer() {
-    const [reviews, setReviews] = useState([])
-    const {id} = useParams()
-    const {setUser, user} = useContext(UserContext)
+  const {books, setBooks} = useContext(BookContext)
+  const [bookReviews, setBookReviews] = useState([])
+  const {setUser, user} = useContext(UserContext)
+  const {id} = useParams()
 
-    useEffect(() => {
-        fetch(`/books/${id}`)
-        .then((r) => r.json())
-        .then((data)=> {
-        setReviews(data.reviews)
-          
-        })
-      }, []);
+  useEffect(() => {
+    const book = books.find((book) => book.id === parseInt(id))
+    
+    if(book){
+      setBookReviews(book.reviews)
+    }
+  }, [books]);
      
-      const reviewList = reviews.map((review) => (
+      const reviewList = bookReviews.map((review) => (
         <Review
             key={review.id}
             review={review}
@@ -33,7 +34,7 @@ function ReviewContainer() {
     
 
     function handleAddReview(newReview){
-        setReviews([...reviews, newReview])
+        setBookReviews([...bookReviews, newReview])
 
         const reviewedBooks = [...user.books, newReview.book]
         const userObject = {...user, books: reviewedBooks }
@@ -41,8 +42,8 @@ function ReviewContainer() {
     }
 
     function handleDeleteReview(reviewToDeleteID) {
-      const updatedReviews = reviews.filter((review) => reviewToDeleteID.id !== review.id)
-      setReviews(updatedReviews)
+      const updatedReviews = bookReviews.filter((review) => reviewToDeleteID.id !== review.id)
+      setBookReviews(updatedReviews)
 
       const reviewedBooks = user.books.filter((book) => reviewToDeleteID.book_id !== book.id)
       const userObject = {...user, books: reviewedBooks}
@@ -50,14 +51,14 @@ function ReviewContainer() {
     }
 
     function handleUpdateReview(reviewToUpdate) {
-        const updatedReview = reviews.map((review) => {
+        const updatedReview = bookReviews.map((review) => {
           if(review.id === reviewToUpdate.id) {
             return reviewToUpdate
           } else {
             return review
           }
         })
-        setReviews(updatedReview)
+        setBookReviews(updatedReview)
     }
 
       return(
