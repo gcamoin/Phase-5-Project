@@ -29,7 +29,7 @@ function FilteredBooksCard({searchedBook}) {
                 </CardContent>
                 <CardActions>
             
-                <Link to={`/books/${id}`}><Button size="small">See Reviews</Button></Link>
+                <Link to={`/books/${id}/reviews`}><Button size="small">See Reviews</Button></Link>
            
             </CardActions>
 

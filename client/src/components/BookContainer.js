@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import AddBookForm from "/home/gcamoin/phase-5-project/client/src/components/AddBookForm.js"
 import {GenreContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
-import {BookContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/BookContext.js"
+
 
 function BookContainer(){
-  
+ 
   const {genres ,setGenres} = useContext(GenreContext)
   const [genreBooks, setGenreBooks] = useState([])
   const {id} = useParams()
@@ -18,12 +18,26 @@ function BookContainer(){
     if(genre){
       setGenreBooks(genre.books)
     }
-  }, [genres]);
+  }, [genres, id]);
     
+  // function handleAddReview(newReview){
+  //   setReviews([...reviews, newReview])
 
-  const handleAddBook = (newBook) =>  {
-        setGenreBooks([...genreBooks, newBook])
-        
+  //   const reviewedBooks = [...user.books, newReview.book]
+  //   const userObject = {...user, books: reviewedBooks }
+  //   setUser(userObject)
+
+      const handleAddBook = (newBook) =>  {
+        const updatedGenres = genres.map((genre) => {
+          if(genre.id === newBook.genre_id) {
+            const updatedBooks = [...genre.books, newBook]
+            const updatedGenre = {...genre, books: updatedBooks}
+            return updatedGenre
+          } else {
+            return genre
+          }
+        })
+        setGenres(updatedGenres)
   }
 
 
@@ -35,7 +49,7 @@ function BookContainer(){
       ))
 
   
-      return(
+      return (
         <div align="center">
           <AddBookForm handleAddBook={handleAddBook} genreID={id} />
            <Grid container xs={8} >

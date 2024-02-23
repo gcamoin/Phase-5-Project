@@ -4,19 +4,21 @@ import Header from "/home/gcamoin/phase-5-project/client/src/components/Header.j
 import Grid from '@mui/material/Grid';
 import {GenreContext} from "/home/gcamoin/phase-5-project/client/src/components/contexts/GenreContext.js"
 
+
 function GenreContainer(){
   const {genres, setGenres} = useContext(GenreContext) 
   
-
     useEffect(() => {
         fetch("/genres")
         .then((r) => r.json())
         .then(setGenres);
-    
+        // // if(genres){
+        // //   setGenres(genres)
+        // // }
     
       }, []);
 
-    
+  
     const genreList = genres?.map((genre) => (
         
         <GenreCard 
