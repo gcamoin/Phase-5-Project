@@ -9,7 +9,6 @@ import {BookContext} from "/home/gcamoin/phase-5-project/client/src/components/c
 function BookContainer(){
   
   const {genres ,setGenres} = useContext(GenreContext)
-  const {books, setBooks} = useContext(BookContext)
   const [genreBooks, setGenreBooks] = useState([])
   const {id} = useParams()
  

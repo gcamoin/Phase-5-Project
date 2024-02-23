@@ -7,7 +7,7 @@ function Review({review, handleDeleteReview, bookID, handleUpdateReview, user}) 
     const [errors, setErrors] = useState([])
     const [editReview, setEditReview] = useState(false)
     const [editContent, setEditContent] = useState(content)
-    console.log(review.user.id)
+    
     function handleSubmit(e) {
       e.preventDefault()
       fetch(`/reviews/${id}`, {
